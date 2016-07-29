@@ -1,0 +1,55 @@
+<html>  
+  <head>
+    <title>Electron and Angular2 example.</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="scripts/vendor/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container bg-overlay">
+        <div class="row text-center">
+            <ng2-electron-app>Loading Angular2 sample app...</ng2-electron-app>          
+            <br><br>
+            <button id="notify" type="button" class="btn btn-primary btn-lg">Notify me!</button>            
+        </div>
+    </div>   
+
+    <script src="scripts/vendor/es6-shim.min.js"></script>
+    <script src="scripts/vendor/system-polyfills.js"></script>
+    <script src="scripts/vendor/angular2-polyfills.js"></script>
+    <script src="scripts/vendor/system.src.js"></script>
+    <script src="scripts/vendor/Rx.js"></script>
+    <script src="scripts/vendor/angular2.dev.js"></script>        
+    <script>
+        System.config({
+
+            packages: {
+                'app': {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+
+        System.import('app/boot')
+                .then(null, console.error.bind(console));
+         document.addEventListener('DOMContentLoaded', function() {
+            var path = require('path');
+            var options = [              
+                {
+                    title: "System Notification",
+                    body: "Short system notification with custom image included.",
+                    icon: path.join(__dirname, 'icon.png')
+                }
+            ];
+
+            var doNotify = function(evt) {                
+                if (evt.srcElement.id == "notify") {
+                    new Notification(options[0].title, options[0]);
+                }
+            };
+            document.getElementById("notify").addEventListener("click", doNotify);
+        });
+    </script>
+
+  </body>
+</html>  
