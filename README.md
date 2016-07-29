@@ -1,5 +1,5 @@
 ﻿# blog_electron
-Electron and angular2 code sample for blog post.
+Electron and angular2 code sample for blog post.<br>
 
 Instructions:
 in the root folder, type<br>
