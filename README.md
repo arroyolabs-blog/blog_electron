@@ -2,12 +2,12 @@
 Electron and angular2 code sample for blog post.
 
 Instructions:
-in the root folder, type
-npm init --y
-npm install typescript live-server gulp del run-sequence typings --D --no-progress
-npm install electron-prebuilt --D --no-progress
+in the root folder, type<br>
+npm init --y<br>
+npm install typescript live-server gulp del run-sequence typings --D --no-progress<br>
+npm install electron-prebuilt --D --no-progress<br>
 
-Then, to build and run the application:
-1- npm run frontend
-2- npm run build
-3- npm run run-app
+Then, to build and run the application:<br>
+1- npm run frontend<br>
+2- npm run build<br>
+3- npm run run-app<br>
